@@ -1,0 +1,43 @@
+{
+  "name": "test-app",
+  "version": "0.1.0",
+  "description": "A Eleactron app with react.",
+  "author": "Godfery.Yang<hiyangguo@qq.com>",
+  "main": "./public/electron.js",
+  "private": true,
+  "homepage": "./",
+  "build": {
+    "mac": {
+      "category": "demo"
+    },
+    "files": [
+      {
+        "from": "./",
+        "to": "./",
+        "filter": [
+          "**/*",
+          "!node_modules"
+        ]
+      }
+    ],
+    "directories": {
+      "buildResources": "public"
+    }
+  },
+  "scripts": {
+    "start-electron": "NODE_ENV=development electron .",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "packager": "npm run build && rm -rf dist && electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-builder": "^20.8.1",
+    "react": "^16.2.0",
+    "react-app-rewire-less": "^2.1.1",
+    "react-app-rewired": "^1.5.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  }
+}
